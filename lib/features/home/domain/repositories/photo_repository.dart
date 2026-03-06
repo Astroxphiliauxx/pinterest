@@ -1,1 +1,12 @@
-// TODO: Photo repository interface will be implemented in Day 1 - Step 2
+import '../entities/pexels_photo.dart';
+
+/// Abstract contract — domain never knows about API/Dio details.
+abstract class PhotoRepository {
+  Future<List<PexelsPhoto>> getCuratedPhotos({int page = 1, int perPage = 20});
+
+  Future<List<PexelsPhoto>> searchPhotos({
+    required String query,
+    int page = 1,
+    int perPage = 20,
+  });
+}
