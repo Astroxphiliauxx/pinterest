@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'router/app_router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: PinterestApp()));
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class PinterestApp extends StatelessWidget {
+  const PinterestApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Pinterest',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFE60023)),
         useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFFE60023)),
+        fontFamily: 'Roboto',
       ),
-      home: const Scaffold(
-        body: Center(child: Text('Pinterest Clone — Day 1 Setup ✅')),
-      ),
+      routerConfig: AppRouter.router,
     );
   }
 }
