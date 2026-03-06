@@ -3,8 +3,7 @@ import 'package:dio/dio.dart';
 class DioClient {
   static const _baseUrl = 'https://api.pexels.com/v1';
 
-  // TODO: Replace with your actual key from https://www.pexels.com/api/
-  static const _apiKey = 'YOUR_PEXELS_API_KEY';
+  static const _apiKey = 'fprQIHglhttpOEiWHe8fewDh2PZcwsRitLzE37bSQFUFgz8sCaWhMYid';
 
   late final Dio dio;
 
